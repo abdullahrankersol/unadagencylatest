@@ -93,26 +93,26 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 border-t border-white/10 bg-black/40 backdrop-blur-md">
-        <div className="container-edge grid grid-cols-2 gap-6 py-8 md:grid-cols-4">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 + i * 0.08 }}
-              className="flex flex-col gap-1"
-            >
-              <div className="font-display text-3xl font-bold text-white md:text-4xl">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-              </div>
-              <span className="text-xs uppercase tracking-[0.18em] text-white/50 md:text-sm">
-                {stat.label}
-              </span>
-            </motion.div>
-          ))}
+     <div className="relative z-10 border-t border-line bg-ink backdrop-blur-md">
+  <div className="container-edge grid grid-cols-2 gap-6 py-8 md:grid-cols-4">
+    {stats.map((stat, i) => (
+      <motion.div
+        key={stat.label}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.9 + i * 0.08 }}
+        className="flex flex-col gap-1"
+      >
+        <div className="font-display text-3xl font-bold text-foreground md:text-4xl">
+          <AnimatedCounter value={stat.value} suffix={stat.suffix} />
         </div>
-      </div>
+        <span className="text-xs uppercase tracking-[0.18em] text-foreground/50 md:text-sm">
+          {stat.label}
+        </span>
+      </motion.div>
+    ))}
+  </div>
+</div>
 
       <motion.div
         animate={{ y: [0, 8, 0] }}
