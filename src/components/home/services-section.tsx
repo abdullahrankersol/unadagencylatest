@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { ServicesGrid } from "@/components/services-grid";
+import { ServicesShowcase } from "@/components/services-showcase";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { services } from "@/data/services";
 
@@ -20,8 +20,8 @@ export function ServicesSection() {
           </MagneticButton>
         </div>
 
-        <div className="mt-14">
-          <ServicesGrid services={services} />
+        <div className="mt-16">
+          <ServicesShowcase services={services} />
         </div>
       </div>
     </section>

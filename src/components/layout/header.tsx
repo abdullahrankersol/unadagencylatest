@@ -11,9 +11,15 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
+const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const [prevPathname, setPrevPathname] = useState(pathname);
+
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setOpen(false);
+  }
 
   useEffect(() => {
     function onScroll() {
@@ -23,10 +29,6 @@ export function Header() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";

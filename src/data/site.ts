@@ -30,7 +30,7 @@ export const socialLinks = [
 export const stats = [
   { value: 12500, suffix: "+", label: "Projects Delivered" },
   { value: 3200, suffix: "+", label: "Happy Clients" },
-  { value: 9, suffix: "", label: "Countries Served" },
+  { value: 9, suffix: "+", label: "Countries Served" },
   { value: 15, suffix: "+", label: "Years in Business" },
 ];
 

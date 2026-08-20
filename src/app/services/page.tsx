@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
-import { ServicesGrid } from "@/components/services-grid";
+import { ServicesShowcase } from "@/components/services-showcase";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { StaggerGroup, StaggerItem } from "@/components/ui/reveal";
 import { MagneticButton } from "@/components/ui/magnetic-button";
@@ -48,7 +48,7 @@ export default function ServicesPage() {
 
       <section className="py-24" style={{ backgroundColor: "var(--color-surface)" }}>
         <div className="container-edge">
-          <ServicesGrid services={services} />
+          <ServicesShowcase services={services} />
         </div>
       </section>
 

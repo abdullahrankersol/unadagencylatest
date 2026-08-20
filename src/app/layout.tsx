@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -17,13 +17,13 @@ const themeInitScript = `
 })();
 `;
 
-const spaceGrotesk = Space_Grotesk({
+const notoSansDisplay = Noto_Sans({
   subsets: ["latin"],
   variable: "--font-display-sans",
-  weight: ["500", "600", "700"],
+  weight: ["600", "700", "800", "900"],
 });
 
-const inter = Inter({
+const notoSansBody = Noto_Sans({
   subsets: ["latin"],
   variable: "--font-body-sans",
   weight: ["400", "500", "600"],
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
+<html lang="en" className={`${notoSansDisplay.variable} ${notoSansBody.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
