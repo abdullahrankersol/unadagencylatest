@@ -21,7 +21,11 @@ export default function BlogPage() {
         title="Ideas from the studio floor."
         description="Perspectives on advertising, fabrication and brand experience, written by the people who build it."
       />
-      <section className="pb-28" style={{ backgroundColor: "var(--color-surface)" }}>
+
+      <section
+        className="pt-10 pb-28 md:pt-14"
+        style={{ backgroundColor: "var(--color-surface)" }}
+      >
         <div className="container-edge">
           <StaggerGroup className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {blogPosts.map((post) => (
@@ -38,6 +42,7 @@ export default function BlogPage() {
                       sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
+
                     <span
                       className="absolute left-4 top-4 rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-on-accent"
                       style={{ background: "var(--color-lime)" }}
@@ -45,6 +50,7 @@ export default function BlogPage() {
                       {post.category}
                     </span>
                   </div>
+
                   <div className="flex flex-1 flex-col gap-3 p-6">
                     <span className="text-xs text-foreground/40">
                       {new Date(post.date).toLocaleDateString("en-US", {
@@ -54,13 +60,21 @@ export default function BlogPage() {
                       })}{" "}
                       · {post.readTime}
                     </span>
+
                     <h3 className="font-display text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-foreground/80">
                       {post.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-foreground/55">{post.excerpt}</p>
+
+                    <p className="text-sm leading-relaxed text-foreground/55">
+                      {post.excerpt}
+                    </p>
+
                     <span className="mt-auto flex items-center gap-2 pt-2 text-sm font-medium text-foreground/70 transition-colors group-hover:text-foreground">
                       Read article
-                      <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                      <ArrowUpRight
+                        size={14}
+                        className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                      />
                     </span>
                   </div>
                 </Link>

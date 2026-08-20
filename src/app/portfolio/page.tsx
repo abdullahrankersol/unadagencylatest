@@ -17,7 +17,11 @@ export default function PortfolioPage() {
         title="Selected projects, all built in-house."
         description="Filter by discipline to explore signage, exhibitions, events, retail and branding work delivered for clients across the region."
       />
-      <section className="pb-28" style={{ backgroundColor: "var(--color-surface)" }}>
+
+      <section
+        className="pt-10 pb-28 md:pt-14"
+        style={{ backgroundColor: "var(--color-surface)" }}
+      >
         <div className="container-edge">
           <PortfolioExplorer />
         </div>
